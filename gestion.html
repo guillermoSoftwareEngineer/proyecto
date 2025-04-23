@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoveSafe | Mis Vehículos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="text-white font-sans bg-gradient-to-r from-pink-800 to-[#0F111A]">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center px-6 py-4 bg-transparent">
+    <div class="flex items-center">
+      <img src="./images/logo.png" alt="Logo MoveSafe" class="w-32 h-auto" />
+    </div>
+    <nav class="space-x-6 text-white">
+      <a href="./index.html" class="hover:text-pink-500">INICIO</a>
+      <a href="./servicios.html" class="hover:text-pink-500">SERVICIOS</a>
+      <a href="./historia.html" class="hover:text-pink-500">CONTACTOS</a>
+      <a href="./inSesion.html" class="text-pink-500 font-semibold underline">INICIAR SESIÓN</a>
+    </nav>
+  </header>
+
+  <!-- Título -->
+  <main class="px-6 md:px-16 py-10">
+    <h2 class="text-3xl font-bold text-center mb-10">Mis Vehículos</h2>
+
+    <!-- Contenedor de tarjetas -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
+
+      <!-- Tarjeta vehículo --> 
+      <a href="./inspeccion.html">
+        <div class="bg-[#1C1F2A] rounded-lg overflow-hidden shadow-md w-full max-w-sm">
+          <img src="./images/auto1.png" alt="Toyota Corolla" class="w-full h-40 object-cover">
+          <div class="p-4">
+            <h3 class="font-bold text-white">Toyota Corolla</h3>
+            <p>Placa: ABC-123</p>
+            <p>Estado: Activo</p>
+            <p>Última inspección: 10/03/2024</p>
+          </div>
+        </div>
+      </a>
+
+
+      <!-- Tarjeta vehículo --> 
+      <a href="./inspeccion.html">
+        <div class="bg-[#1C1F2A] rounded-lg overflow-hidden shadow-md w-full max-w-sm">
+          <img src="./images/auto2.png" alt="Volkswagen Tiguan" class="w-full h-40 object-cover">
+          <div class="p-4">
+            <h3 class="font-bold text-white">Volkswagen Tiguan</h3>
+            <p>Placa: MNO-987</p>
+            <p>Estado: Inactivo</p>
+            <p>Última inspección: 05/12/2023</p>
+          </div>
+        </div>
+      </a>
+
+
+      <!-- Tarjeta vehículo --> 
+      <a href="./inspeccion.html">
+        <div class="bg-[#1C1F2A] rounded-lg overflow-hidden shadow-md w-full max-w-sm">
+          <img src="./images/auto3.png" alt="Nissan Frontier" class="w-full h-40 object-cover">
+          <div class="p-4">
+            <h3 class="font-bold text-white">Nissan Frontier</h3>
+            <p>Placa: DEF-456</p>
+            <p>Estado: Inactivo</p>
+            <p>Última inspección: 15/01/2024</p>
+          </div>
+        </div>
+      </a>
+
+
+      <!-- Tarjeta vehículo --> 
+      <a href="./inspeccion.html">
+        <div class="bg-[#1C1F2A] rounded-lg overflow-hidden shadow-md w-full max-w-sm">
+          <img src="./images/auto4.png" alt="BMW Serie 3" class="w-full h-40 object-cover">
+          <div class="p-4">
+            <h3 class="font-bold text-white">BMW Serie 3</h3>
+            <p>Placa: XYZ-789</p>
+            <p>Estado: Activo</p>
+            <p>Última inspección: 02/02/2024</p>
+          </div>
+        </div>
+      </a>
+
+
+      <!-- Tarjeta vehículo --> 
+      <a href="./inspeccion.html">
+        <div class="bg-[#1C1F2A] rounded-lg overflow-hidden shadow-md w-full max-w-sm">
+          <img src="./images/auto5.png" alt="Suzuki GSX-R750" class="w-full h-40 object-cover">
+          <div class="p-4">
+            <h3 class="font-bold text-white">Suzuki GSX-R750</h3>
+            <p>Placa: SUZ-123</p>
+            <p>Estado: Activo</p>
+            <p>Última inspección: 12/03/2024</p>
+          </div>
+        </div>
+      </a>
+
+      
+      <!-- Tarjeta vehículo --> 
+      <a href="./inspeccion.html">
+        <div class="bg-[#1C1F2A] rounded-lg overflow-hidden shadow-md w-full max-w-sm">
+          <img src="./images/auto6.png" alt="Harley Davidson Street Glide" class="w-full h-40 object-cover">
+          <div class="p-4">
+            <h3 class="font-bold text-white">Harley-Davidson Street Glide</h3>
+            <p>Placa: HD-456</p>
+            <p>Estado: Inactivo</p>
+            <p>Última inspección: 20/01/2024</p>
+          </div>
+        </div>
+      </a>
+
+
+    </div>
+
+    <!-- Botón agregar vehículo -->
+    <div class="flex justify-center mt-10">
+      <button class="bg-pink-600 hover:bg-pink-700 text-white font-semibold px-6 py-3 rounded">
+        AGREGAR VEHÍCULO +
+      </button>
+    </div>
+  </main>
+
+<!-- Footer -->
+<footer class="bg-[#0F111A] border-t border-gray-700 mt-6 py-6 px-6 text-sm">
+  <div class="flex flex-col md:flex-row justify-between gap-8">
+
+    <!-- Columna izquierda: ícono + texto -->
+    <div class="flex items-start gap-4 md:w-1/2 px-4">
+      <img src="./icons/mail.png" alt="Correo" class="w-7 h-7 mt-1" />
+      <div>
+        <p class="mb-1">Contacto: info@tuservicio.com | Tel: +123 456 789</p>
+        <p>Dirección: Calle Falsa 123, Ciudad, País</p>
+      </div>
+    </div>
+
+    <!-- Columna derecha: íconos grandes, centrados, bien distribuidos -->
+    <div class="flex justify-center md:justify-center items-center gap-16 md:w-1/2 px-4">
+      <a href="https://www.instagram.com/"><img src="./icons/instagram.png" alt="Instagram" class="w-8 h-8" /></a>
+      <a href="https://www.youtube.com/"><img src="./icons/youtube.png" alt="YouTube" class="w-8 h-8" /></a>
+      <a href="https://www.facebook.com/"><img src="./icons/faceboock.png" alt="Facebook" class="w-8 h-8" /></a>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
