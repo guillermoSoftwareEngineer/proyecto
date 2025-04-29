@@ -8,7 +8,13 @@
 </head>
 <body class="text-white font-sans bg-gradient-to-l from-[#0F111A] to-pink-800">
 
-  <!-- Header -->
+  <script>
+    const session = JSON.parse(localStorage.getItem('moveSafeSession') || 'null');
+    if (!session) {
+      window.location.href = './inSesion.html';
+    }
+  </script>
+
   <header class="flex justify-between items-center px-6 py-4 bg-transparent">
     <div class="flex items-center">
       <img src="./images/logo.png" alt="Logo MoveSafe" class="w-32 h-auto" />
@@ -21,11 +27,9 @@
     </nav>
   </header>
 
-  <!-- Título -->
   <main class="px-4 md:px-10 py-10">
     <h2 class="text-3xl font-bold text-center mb-8">Inspección de Vehículos</h2>
 
-    <!-- Tabla -->
     <div class="overflow-x-auto">
       <table class="min-w-full text-sm text-left border border-white text-white">
         <thead class="bg-[#1C1F2A]">
@@ -38,7 +42,6 @@
           </tr>
         </thead>
         <tbody class="bg-[#0F111A]">
-          <!-- Fila para cada ítem -->
           <tr class="text-center border-t border-white">
             <td class="border border-white py-2">Estado de Llantas</td>
             <td class="border border-white align-middle"><input type="checkbox"></td>
@@ -46,12 +49,15 @@
             <td class="border border-white align-middle">(Ej. Llantas desgastadas)</td>
             <td class="border border-white align-middle">
               <div class="flex justify-center items-center gap-2">
-                <button class="text-xs px-3 py-1 rounded" style="background-color: #cc4be2;">Cargar Imagen</button>
-                <img src="https://cdn-icons-png.flaticon.com/512/860/860790.png" alt="Foto" class="w-5 h-5 rounded-full p-1" style="background-color: #cc4be2;" />
+                <button class="text-xs px-3 py-1 rounded" style="background-color: #cc4be2;">
+                  Cargar Imagen
+                </button>
+                <button onclick="window.location.href='./modInspecciones.html';" class="p-1 rounded-full" style="background-color: #cc4be2;">
+                  <img src="https://cdn-icons-png.flaticon.com/512/860/860790.png" alt="Ir a Modificar Inspecciones" class="w-5 h-5" />
+                </button>
               </div>
             </td>
           </tr>
-
           <tr class="text-center border-t border-white">
             <td class="border border-white py-2">Frenos</td>
             <td class="border border-white align-middle"><input type="checkbox"></td>
@@ -59,12 +65,15 @@
             <td class="border border-white align-middle">(Ej. Frenos en mal estado)</td>
             <td class="border border-white align-middle">
               <div class="flex justify-center items-center gap-2">
-                <button class="text-xs px-3 py-1 rounded" style="background-color: #cc4be2;">Cargar Imagen</button>
-                <img src="https://cdn-icons-png.flaticon.com/512/860/860790.png" alt="Foto" class="w-5 h-5 rounded-full p-1" style="background-color: #cc4be2;" />
+                <button class="text-xs px-3 py-1 rounded" style="background-color: #cc4be2;">
+                  Cargar Imagen
+                </button>
+                <button onclick="window.location.href='./administracion.html';" class="p-1 rounded-full" style="background-color: #cc4be2;">
+                  <img src="https://cdn-icons-png.flaticon.com/512/860/860790.png" alt="Ir a Administración" class="w-5 h-5" />
+                </button>
               </div>
             </td>
           </tr>
-
           <tr class="text-center border-t border-white">
             <td class="border border-white py-2">Luces</td>
             <td class="border border-white"><input type="checkbox"></td>
@@ -72,12 +81,15 @@
             <td class="border border-white">(Ej. Luces rotas)</td>
             <td class="border border-white">
               <div class="flex justify-center items-center gap-2">
-                <button class="text-xs px-3 py-1 rounded" style="background-color: #cc4be2;">Cargar Imagen</button>
-                <img src="https://cdn-icons-png.flaticon.com/512/860/860790.png" alt="Foto" class="w-5 h-5 rounded-full p-1" style="background-color: #cc4be2;" />
+                <button class="text-xs px-3 py-1 rounded" style="background-color: #cc4be2;">
+                  Cargar Imagen
+                </button>
+                <button onclick="window.location.href='./gestion.html';" class="p-1 rounded-full" style="background-color: #cc4be2;">
+                  <img src="https://cdn-icons-png.flaticon.com/512/860/860790.png" alt="Ir a Gestión" class="w-5 h-5" />
+                </button>
               </div>
             </td>
           </tr>
-
           <tr class="text-center border-t border-white">
             <td class="border border-white py-2">Sistema de Suspensión</td>
             <td class="border border-white"><input type="checkbox" /></td>
@@ -85,12 +97,15 @@
             <td class="border border-white">(Ej. Amortiguadores defectuosos)</td>
             <td class="border border-white">
               <div class="flex justify-center items-center gap-2">
-                <button class="text-xs px-3 py-1 rounded" style="background-color: #cc4be2;">Cargar Imagen</button>
-                <img src="https://cdn-icons-png.flaticon.com/512/860/860790.png" alt="Foto" class="w-5 h-5 rounded-full p-1" style="background-color: #cc4be2;" />
+                <button class="text-xs px-3 py-1 rounded" style="background-color: #cc4be2;">
+                  Cargar Imagen
+                </button>
+                <button onclick="window.location.href='./modInspecciones.html';" class="p-1 rounded-full" style="background-color: #cc4be2;">
+                  <img src="https://cdn-icons-png.flaticon.com/512/860/860790.png" alt="Ir a Modificar Inspecciones" class="w-5 h-5" />
+                </button>
               </div>
             </td>
           </tr>
-
           <tr class="text-center border-t border-white">
             <td class="border border-white py-2">Carrocería</td>
             <td class="border border-white"><input type="checkbox" /></td>
@@ -98,12 +113,15 @@
             <td class="border border-white">(Ej. Raspones en la pintura)</td>
             <td class="border border-white">
               <div class="flex justify-center items-center gap-2">
-                <button class="text-xs px-3 py-1 rounded" style="background-color: #cc4be2;">Cargar Imagen</button>
-                <img src="https://cdn-icons-png.flaticon.com/512/860/860790.png" alt="Foto" class="w-5 h-5 rounded-full p-1" style="background-color: #cc4be2;" />
+                <button class="text-xs px-3 py-1 rounded" style="background-color: #cc4be2;">
+                  Cargar Imagen
+                </button>
+                <button onclick="window.location.href='./administracion.html';" class="p-1 rounded-full" style="background-color: #cc4be2;">
+                  <img src="https://cdn-icons-png.flaticon.com/512/860/860790.png" alt="Ir a Administración" class="w-5 h-5" />
+                </button>
               </div>
             </td>
           </tr>
-
           <tr class="text-center border-t border-white">
             <td class="border border-white py-2">Espejos</td>
             <td class="border border-white"><input type="checkbox" /></td>
@@ -111,12 +129,15 @@
             <td class="border border-white">(Ej. Espejo roto)</td>
             <td class="border border-white">
               <div class="flex justify-center items-center gap-2">
-                <button class="text-xs px-3 py-1 rounded" style="background-color: #cc4be2;">Cargar Imagen</button>
-                <img src="https://cdn-icons-png.flaticon.com/512/860/860790.png" alt="Foto" class="w-5 h-5 rounded-full p-1" style="background-color: #cc4be2;" />
+                <button class="text-xs px-3 py-1 rounded" style="background-color: #cc4be2;">
+                  Cargar Imagen
+                </button>
+                <button onclick="window.location.href='./gestion.html';" class="p-1 rounded-full" style="background-color: #cc4be2;">
+                  <img src="https://cdn-icons-png.flaticon.com/512/860/860790.png" alt="Ir a Gestión" class="w-5 h-5" />
+                </button>
               </div>
             </td>
           </tr>
-
           <tr class="text-center border-t border-white">
             <td class="border border-white py-2">Motor y Transmisión</td>
             <td class="border border-white"><input type="checkbox" /></td>
@@ -124,12 +145,15 @@
             <td class="border border-white">(Ej. Fugas de aceite)</td>
             <td class="border border-white">
               <div class="flex justify-center items-center gap-2">
-                <button class="text-xs px-3 py-1 rounded" style="background-color: #cc4be2;">Cargar Imagen</button>
-                <img src="https://cdn-icons-png.flaticon.com/512/860/860790.png" alt="Foto" class="w-5 h-5 rounded-full p-1" style="background-color: #cc4be2;" />
+                <button class="text-xs px-3 py-1 rounded" style="background-color: #cc4be2;">
+                  Cargar Imagen
+                </button>
+                <button onclick="window.location.href='./modInspecciones.html';" class="p-1 rounded-full" style="background-color: #cc4be2;">
+                  <img src="https://cdn-icons-png.flaticon.com/512/860/860790.png" alt="Ir a Modificar Inspecciones" class="w-5 h-5" />
+                </button>
               </div>
             </td>
           </tr>
-
           <tr class="text-center border-t border-white">
             <td class="border border-white py-2">Batería</td>
             <td class="border border-white"><input type="checkbox" /></td>
@@ -137,12 +161,15 @@
             <td class="border border-white">(Ej. Batería baja)</td>
             <td class="border border-white">
               <div class="flex justify-center items-center gap-2">
-                <button class="text-xs px-3 py-1 rounded" style="background-color: #cc4be2;">Cargar Imagen</button>
-                <img src="https://cdn-icons-png.flaticon.com/512/860/860790.png" alt="Foto" class="w-5 h-5 rounded-full p-1" style="background-color: #cc4be2;" />
+                <button class="text-xs px-3 py-1 rounded" style="background-color: #cc4be2;">
+                  Cargar Imagen
+                </button>
+                <button onclick="window.location.href='./administracion.html';" class="p-1 rounded-full" style="background-color: #cc4be2;">
+                  <img src="https://cdn-icons-png.flaticon.com/512/860/860790.png" alt="Ir a Administración" class="w-5 h-5" />
+                </button>
               </div>
             </td>
           </tr>
-
           <tr class="text-center border-t border-white">
             <td class="border border-white py-2">Sistema de Escape</td>
             <td class="border border-white"><input type="checkbox" /></td>
@@ -150,12 +177,15 @@
             <td class="border border-white">(Ej. Fugas en el escape)</td>
             <td class="border border-white">
               <div class="flex justify-center items-center gap-2">
-                <button class="text-xs px-3 py-1 rounded" style="background-color: #cc4be2;">Cargar Imagen</button>
-                <img src="https://cdn-icons-png.flaticon.com/512/860/860790.png" alt="Foto" class="w-5 h-5 rounded-full p-1" style="background-color: #cc4be2;" />
+                <button class="text-xs px-3 py-1 rounded" style="background-color: #cc4be2;">
+                  Cargar Imagen
+                </button>
+                <button onclick="window.location.href='./gestion.html';" class="p-1 rounded-full" style="background-color: #cc4be2;">
+                  <img src="https://cdn-icons-png.flaticon.com/512/860/860790.png" alt="Ir a Gestión" class="w-5 h-5" />
+                </button>
               </div>
             </td>
           </tr>
-
           <tr class="text-center border-t border-white">
             <td class="border border-white py-2">Otros</td>
             <td class="border border-white"><input type="checkbox" /></td>
@@ -163,8 +193,12 @@
             <td class="border border-white">(Ej. Detalles adicionales)</td>
             <td class="border border-white">
               <div class="flex justify-center items-center gap-2">
-                <button class="text-xs px-3 py-1 rounded" style="background-color: #cc4be2;">Cargar Imagen</button>
-                <img src="https://cdn-icons-png.flaticon.com/512/860/860790.png" alt="Foto" class="w-5 h-5 rounded-full p-1" style="background-color: #cc4be2;" />
+                <button class="text-xs px-3 py-1 rounded" style="background-color: #cc4be2;">
+                  Cargar Imagen
+                </button>
+                <button onclick="window.location.href='./modInspecciones.html';" class="p-1 rounded-full" style="background-color: #cc4be2;">
+                  <img src="https://cdn-icons-png.flaticon.com/512/860/860790.png" alt="Ir a Modificar Inspecciones" class="w-5 h-5" />
+                </button>
               </div>
             </td>
           </tr>
@@ -173,28 +207,23 @@
     </div>
   </main>
 
-<!-- Footer -->
-<footer class="bg-[#0F111A] border-t border-gray-700 mt-6 py-6 px-6 text-sm">
-  <div class="flex flex-col md:flex-row justify-between gap-8">
-
-    <!-- Columna izquierda: ícono + texto -->
-    <div class="flex items-start gap-4 md:w-1/2 px-4">
-      <img src="./icons/mail.png" alt="Correo" class="w-7 h-7 mt-1" />
-      <div>
-        <p class="mb-1">Contacto: info@tuservicio.com | Tel: +123 456 789</p>
-        <p>Dirección: Calle Falsa 123, Ciudad, País</p>
+  <footer class="bg-[#0F111A] border-t border-gray-700 mt-6 py-6 px-6 text-sm">
+    <div class="flex flex-col md:flex-row justify-between gap-8">
+      <div class="flex items-start gap-4 md:w-1/2 px-4">
+        <img src="./icons/mail.png" alt="Correo" class="w-7 h-7 mt-1" />
+        <div>
+          <p class="mb-1">Contacto: info@tuservicio.com | Tel: +123 456 789</p>
+          <p>Dirección: Calle Falsa 123, Ciudad, País</p>
+        </div>
+      </div>
+      <div class="flex justify-center md:justify-center items-center gap-16 md:w-1/2 px-4">
+        <a href="https://www.instagram.com/"><img src="./icons/instagram.png" alt="Instagram" class="w-8 h-8" /></a>
+        <a href="https://www.youtube.com/"><img src="./icons/youtube.png" alt="YouTube" class="w-8 h-8" /></a>
+        <a href="https://www.facebook.com/"><img src="./icons/faceboock.png" alt="Facebook" class="w-8 h-8" /></a>
       </div>
     </div>
+  </footer>
 
-    <!-- Columna derecha: íconos grandes, centrados, bien distribuidos -->
-    <div class="flex justify-center md:justify-center items-center gap-16 md:w-1/2 px-4">
-      <a href="https://www.instagram.com/"><img src="./icons/instagram.png" alt="Instagram" class="w-8 h-8" /></a>
-      <a href="https://www.youtube.com/"><img src="./icons/youtube.png" alt="YouTube" class="w-8 h-8" /></a>
-      <a href="https://www.facebook.com/"><img src="./icons/faceboock.png" alt="Facebook" class="w-8 h-8" /></a>
-    </div>
-
-  </div>
-</footer>
-<script src="./app.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
