@@ -8,6 +8,14 @@
 </head>
 <body class="text-white font-sans bg-gradient-to-b from-pink-800 to-[#0F111A] min-h-screen flex flex-col justify-between">
 
+  <script>
+    // Protección de ruta: requiere sesión activa
+    const session = JSON.parse(localStorage.getItem('moveSafeSession') || 'null');
+    if (!session) {
+      window.location.href = './inSesion.html';
+    }
+  </script>
+
   <!-- Header -->
   <header class="flex justify-between items-center px-6 py-4">
     <img src="./images/logo.png" alt="Logo MoveSafe" class="w-32 h-auto">
@@ -36,7 +44,7 @@
           </div>
         </div>
 
-        <!-- Columna 2: Tipo de inspección (no alineada con las otras) -->
+        <!-- Columna 2: Tipo de inspección -->
         <div class="bg-pink-700/60 backdrop-blur-md rounded-3xl px-6 py-6 h-[300px] mt-12 flex items-center">
           <div class="flex flex-col gap-4 text-sm w-full mx-auto">
             <p class="font-semibold">Tipo de inspección:</p>
@@ -81,28 +89,23 @@
     </form>
   </main>
 
-<!-- Footer -->
-<footer class="bg-[#0F111A] border-t border-gray-700 mt-6 py-6 px-6 text-sm">
-  <div class="flex flex-col md:flex-row justify-between gap-8">
-
-    <!-- Columna izquierda: ícono + texto -->
-    <div class="flex items-start gap-4 md:w-1/2 px-4">
-      <img src="./icons/mail.png" alt="Correo" class="w-7 h-7 mt-1" />
-      <div>
-        <p class="mb-1">Contacto: info@tuservicio.com | Tel: +123 456 789</p>
-        <p>Dirección: Calle Falsa 123, Ciudad, País</p>
+  <!-- Footer -->
+  <footer class="bg-[#0F111A] border-t border-gray-700 mt-6 py-6 px-6 text-sm">
+    <div class="flex flex-col md:flex-row justify-between gap-8">
+      <div class="flex items-start gap-4 md:w-1/2 px-4">
+        <img src="./icons/mail.png" alt="Correo" class="w-7 h-7 mt-1" />
+        <div>
+          <p class="mb-1">Contacto: info@tuservicio.com | Tel: +123 456 789</p>
+          <p>Dirección: Calle Falsa 123, Ciudad, País</p>
+        </div>
+      </div>
+      <div class="flex justify-center md:justify-center items-center gap-16 md:w-1/2 px-4">
+        <a href="https://www.instagram.com/"><img src="./icons/instagram.png" alt="Instagram" class="w-8 h-8" /></a>
+        <a href="https://www.youtube.com/"><img src="./icons/youtube.png" alt="YouTube" class="w-8 h-8" /></a>
+        <a href="https://www.facebook.com/"><img src="./icons/faceboock.png" alt="Facebook" class="w-8 h-8" /></a>
       </div>
     </div>
-
-    <!-- Columna derecha: íconos grandes, centrados, bien distribuidos -->
-    <div class="flex justify-center md:justify-center items-center gap-16 md:w-1/2 px-4">
-      <a href="https://www.instagram.com/"><img src="./icons/instagram.png" alt="Instagram" class="w-8 h-8" /></a>
-      <a href="https://www.youtube.com/"><img src="./icons/youtube.png" alt="YouTube" class="w-8 h-8" /></a>
-      <a href="https://www.facebook.com/"><img src="./icons/faceboock.png" alt="Facebook" class="w-8 h-8" /></a>
-    </div>
-
-  </div>
-</footer>
+  </footer>
 
   <script>
     function validarFormulario() {
@@ -111,5 +114,6 @@
     }
   </script>
 
+  <script src="./app.js"></script>
 </body>
 </html>

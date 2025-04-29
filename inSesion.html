@@ -21,61 +21,80 @@
     </nav>
   </header>
 
-  <!-- Sección principal con menor altura -->
+  <!-- Sección principal con formularios estáticos -->
   <main class="px-6 md:px-16 py-20">
     <div class="flex flex-col md:flex-row justify-between items-center gap-12 min-h-[350px]">
 
-      <!-- Título y opciones (50%) -->
+      <!-- Texto e instrucciones -->
       <div class="w-full md:w-1/2 flex flex-col justify-center items-center text-center h-full">
         <h2 class="text-4xl font-bold mb-8">Inicio de sesión</h2>
         <div class="flex gap-8 text-sm font-semibold">
-            <a href="./administracion.html">
-              <span class="hover:text-pink-400 cursor-pointer">Soy cliente</span>
-            </a>
-            <a href="./solInspeccion.html">
-              <span class="hover:text-pink-400 cursor-pointer">Hacer inspección</span>
-            </a>
+          <a href="./inSesion.html"><span class="hover:text-pink-400 cursor-pointer">Soy cliente</span></a>
+          <a href="./solInspeccion.html"><span class="hover:text-pink-400 cursor-pointer">Hacer inspección</span></a>
         </div>
       </div>
 
-      <!-- Formulario (50%) -->
-      <div class="w-full md:w-1/2 flex justify-center">
-        <div class="bg-[#00000044] rounded-3xl px-6 py-24 backdrop-blur-md shadow-lg flex flex-col justify-center w-full max-w-sm">
-          <form class="flex flex-col gap-8">
-            <div class="border-b border-white pb-2">
-              <input type="text" placeholder="Usuario" class="w-full bg-transparent text-white outline-none placeholder-white text-sm" />
-            </div>
-            <div class="border-b border-white pb-2">
-              <input type="password" placeholder="Contraseña" class="w-full bg-transparent text-white outline-none placeholder-white text-sm" />
-            </div>
+      <!-- Formularios de Registro y Login -->
+      <div class="w-full md:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Registro -->
+        <div class="bg-[#00000044] rounded-3xl px-6 py-10 backdrop-blur-md shadow-lg">
+          <h3 class="text-2xl text-white font-bold mb-4">Registro</h3>
+          <form id="form-reg" class="flex flex-col gap-4">
+            <input id="reg-name" type="text" placeholder="Nombre completo"
+                   class="bg-transparent border-b border-white text-white placeholder-white outline-none text-sm py-1" required>
+            <input id="reg-email" type="email" placeholder="Correo electrónico"
+                   class="bg-transparent border-b border-white text-white placeholder-white outline-none text-sm py-1" required>
+            <input id="reg-pass" type="password" placeholder="Contraseña"
+                   class="bg-transparent border-b border-white text-white placeholder-white outline-none text-sm py-1" required>
+            <select id="reg-role"
+                    class="bg-transparent border-b border-white text-white outline-none text-sm py-1">
+              <option value="visualizador" class="bg-[#0F111A]">Visualizador</option>
+              <option value="administrador" class="bg-[#0F111A]">Administrador</option>
+            </select>
+            <button type="submit"
+                    class="mt-4 bg-pink-600 hover:bg-pink-700 text-white py-2 rounded transition-all font-semibold">
+              Registrar
+            </button>
+          </form>
+        </div>
+
+        <!-- Login -->
+        <div class="bg-[#00000044] rounded-3xl px-6 py-10 backdrop-blur-md shadow-lg">
+          <h3 class="text-2xl text-white font-bold mb-4">Iniciar Sesión</h3>
+          <form id="form-log" class="flex flex-col gap-4">
+            <input id="log-email" type="email" placeholder="Correo electrónico"
+                   class="bg-transparent border-b border-white text-white placeholder-white outline-none text-sm py-1" required>
+            <input id="log-pass" type="password" placeholder="Contraseña"
+                   class="bg-transparent border-b border-white text-white placeholder-white outline-none text-sm py-1" required>
+            <button type="submit"
+                    class="mt-4 bg-pink-600 hover:bg-pink-700 text-white py-2 rounded transition-all font-semibold">
+              Entrar
+            </button>
           </form>
         </div>
       </div>
     </div>
   </main>
 
-<!-- Footer -->
-<footer class="bg-[#0F111A] border-t border-gray-700 mt-6 py-6 px-6 text-sm">
-  <div class="flex flex-col md:flex-row justify-between gap-8">
-
-    <!-- Columna izquierda: ícono + texto -->
-    <div class="flex items-start gap-4 md:w-1/2 px-4">
-      <img src="./icons/mail.png" alt="Correo" class="w-7 h-7 mt-1" />
-      <div>
-        <p class="mb-1">Contacto: info@tuservicio.com | Tel: +123 456 789</p>
-        <p>Dirección: Calle Falsa 123, Ciudad, País</p>
+  <!-- Footer -->
+  <footer class="bg-[#0F111A] border-t border-gray-700 mt-6 py-6 px-6 text-sm">
+    <div class="flex flex-col md:flex-row justify-between gap-8">
+      <div class="flex items-start gap-4 md:w-1/2 px-4">
+        <img src="./icons/mail.png" alt="Correo" class="w-7 h-7 mt-1" />
+        <div>
+          <p class="mb-1">Contacto: info@tuservicio.com | Tel: +123 456 789</p>
+          <p>Dirección: Calle Falsa 123, Ciudad, País</p>
+        </div>
+      </div>
+      <div class="flex justify-center md:justify-center items-center gap-16 md:w-1/2 px-4">
+        <a href="https://www.instagram.com/"><img src="./icons/instagram.png" alt="Instagram" class="w-8 h-8" /></a>
+        <a href="https://www.youtube.com/"><img src="./icons=youtube.png" alt="YouTube" class="w-8 h-8" /></a>
+        <a href="https://www.facebook.com/"><img src="./icons/faceboock.png" alt="Facebook" class="w-8 h-8" /></a>
       </div>
     </div>
+  </footer>
 
-    <!-- Columna derecha: íconos grandes, centrados, bien distribuidos -->
-    <div class="flex justify-center md:justify-center items-center gap-16 md:w-1/2 px-4">
-      <a href="https://www.instagram.com/"><img src="./icons/instagram.png" alt="Instagram" class="w-8 h-8" /></a>
-      <a href="https://www.youtube.com/"><img src="./icons/youtube.png" alt="YouTube" class="w-8 h-8" /></a>
-      <a href="https://www.facebook.com/"><img src="./icons/faceboock.png" alt="Facebook" class="w-8 h-8" /></a>
-    </div>
-
-  </div>
-</footer>
-
+  <!-- Lógica de auth y redirección -->
+  <script src="./app.js"></script>
 </body>
 </html>

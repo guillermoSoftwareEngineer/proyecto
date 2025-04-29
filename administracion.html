@@ -8,19 +8,27 @@
 </head>
 <body class="text-white font-sans bg-gradient-to-b from-pink-800 to-[#0F111A] min-h-screen flex flex-col justify-between">
 
+  <script>
+    // Protección de acceso: solo administradores
+    const session = JSON.parse(localStorage.getItem('moveSafeSession') || 'null');
+    if (!session || session.role !== 'administrador') {
+      window.location.href = './inSesion.html';
+    }
+  </script>
+
   <!-- Header -->
   <header class="flex justify-between items-center px-6 py-4">
     <img src="./images/logo.png" alt="Logo MoveSafe" class="w-32 h-auto">
     <nav class="space-x-6 text-white">
       <a href="./inspeccion.html" class="underline font-semibold">INSPECCIONES</a>
-      <a href="./solInspeccion.html" class="hover:text-pink-500">CREAR INSPECTORES</a>
+      <a href="./inspectores.html" class="hover:text-pink-500">CREAR INSPECTORES</a>
     </nav>
   </header>
 
   <!-- Grid principal -->
-  <main class="px-6 md:px-16 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 place-items-center">
-
-    <!-- Tarjeta 1 --> <a href="./gestion.html">
+  <main class="px-6 md:px-16 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 place-items-center flex-grow">
+    <!-- Tarjeta 1 -->
+    <a href="./gestion.html">
       <div class="bg-pink-800/90 rounded-2xl p-4 flex flex-col items-center w-[240px] h-[240px]">
         <img src="./images/auto1.png" alt="Vehículo" class="w-full h-28 object-cover rounded mb-3">
         <button class="bg-black text-white text-sm px-4 py-1 rounded-full mb-2">Revisar</button>
@@ -28,8 +36,8 @@
       </div>
     </a>
 
-
-    <!-- Tarjeta 2 --> <a href="./gestion.html">
+    <!-- Tarjeta 2 -->
+    <a href="./gestion.html">
       <div class="bg-pink-800/90 rounded-2xl p-4 flex flex-col items-center w-[240px] h-[240px]">
         <img src="./images/auto2.png" alt="Vehículo" class="w-full h-28 object-cover rounded mb-3">
         <button class="bg-black text-white text-sm px-4 py-1 rounded-full mb-2">Revisar</button>
@@ -37,8 +45,8 @@
       </div>
     </a>
 
-
-    <!-- Tarjeta 3 --> <a href="./gestion.html">
+    <!-- Tarjeta 3 -->
+    <a href="./gestion.html">
       <div class="bg-pink-800/90 rounded-2xl p-4 flex flex-col items-center w-[240px] h-[240px]">
         <img src="./images/auto3.png" alt="Vehículo" class="w-full h-28 object-cover rounded mb-3">
         <button class="bg-black text-white text-sm px-4 py-1 rounded-full mb-2">Revisar</button>
@@ -46,8 +54,8 @@
       </div>
     </a>
 
-
-    <!-- Tarjeta 4 --> <a href="./gestion.html">
+    <!-- Tarjeta 4 -->
+    <a href="./gestion.html">
       <div class="bg-pink-800/90 rounded-2xl p-4 flex flex-col items-center w-[240px] h-[240px]">
         <img src="./images/auto4.png" alt="Moto" class="w-full h-28 object-cover rounded mb-3">
         <button class="bg-black text-white text-sm px-4 py-1 rounded-full mb-2">Revisar</button>
@@ -55,8 +63,8 @@
       </div>
     </a>
 
-
-    <!-- Tarjeta 5 --> <a href="./gestion.html">
+    <!-- Tarjeta 5 -->
+    <a href="./gestion.html">
       <div class="bg-pink-800/90 rounded-2xl p-4 flex flex-col items-center w-[240px] h-[240px]">
         <img src="./images/auto5.png" alt="Moto" class="w-full h-28 object-cover rounded mb-3">
         <button class="bg-black text-white text-sm px-4 py-1 rounded-full mb-2">Revisar</button>
@@ -64,40 +72,34 @@
       </div>
     </a>
 
-
-    <!-- Tarjeta 6 --> <a href="./gestion.html">
+    <!-- Tarjeta 6 -->
+    <a href="./gestion.html">
       <div class="bg-pink-800/90 rounded-2xl p-4 flex flex-col items-center w-[240px] h-[240px]">
         <img src="./images/auto6.png" alt="Moto" class="w-full h-28 object-cover rounded mb-3">
         <button class="bg-black text-white text-sm px-4 py-1 rounded-full mb-2">Revisar</button>
         <button class="bg-black text-white text-sm px-4 py-1 rounded-full">Descargar</button>
       </div>
     </a>
-
-
   </main>
 
-<!-- Footer -->
-<footer class="bg-[#0F111A] border-t border-gray-700 mt-6 py-6 px-6 text-sm">
-  <div class="flex flex-col md:flex-row justify-between gap-8">
-
-    <!-- Columna izquierda: ícono + texto -->
-    <div class="flex items-start gap-4 md:w-1/2 px-4">
-      <img src="./icons/mail.png" alt="Correo" class="w-7 h-7 mt-1" />
-      <div>
-        <p class="mb-1">Contacto: info@tuservicio.com | Tel: +123 456 789</p>
-        <p>Dirección: Calle Falsa 123, Ciudad, País</p>
+  <!-- Footer -->
+  <footer class="bg-[#0F111A] border-t border-gray-700 py-6 px-6 text-sm">
+    <div class="flex flex-col md:flex-row justify-between gap-8">
+      <div class="flex items-start gap-4 md:w-1/2 px-4">
+        <img src="./icons/mail.png" alt="Correo" class="w-7 h-7 mt-1" />
+        <div>
+          <p class="mb-1">Contacto: info@tuservicio.com | Tel: +123 456 789</p>
+          <p>Dirección: Calle Falsa 123, Ciudad, País</p>
+        </div>
+      </div>
+      <div class="flex justify-center items-center gap-16 md:w-1/2 px-4">
+        <a href="https://www.instagram.com/"><img src="./icons/instagram.png" alt="Instagram" class="w-8 h-8" /></a>
+        <a href="https://www.youtube.com/"><img src="./icons/youtube.png" alt="YouTube" class="w-8 h-8" /></a>
+        <a href="https://www.facebook.com/"><img src="./icons/faceboock.png" alt="Facebook" class="w-8 h-8" /></a>
       </div>
     </div>
+  </footer>
 
-    <!-- Columna derecha: íconos grandes, centrados, bien distribuidos -->
-    <div class="flex justify-center md:justify-center items-center gap-16 md:w-1/2 px-4">
-      <a href="https://www.instagram.com/"><img src="./icons/instagram.png" alt="Instagram" class="w-8 h-8" /></a>
-      <a href="https://www.youtube.com/"><img src="./icons/youtube.png" alt="YouTube" class="w-8 h-8" /></a>
-      <a href="https://www.facebook.com/"><img src="./icons/faceboock.png" alt="Facebook" class="w-8 h-8" /></a>
-    </div>
-
-  </div>
-</footer>
-
+  <script src="./app.js"></script>
 </body>
 </html>

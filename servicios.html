@@ -13,6 +13,14 @@
 </head>
 <body class="bg-[#0F111A] text-white font-sans">
 
+  <script>
+    // Protección de ruta: requiere sesión
+    const session = JSON.parse(localStorage.getItem('moveSafeSession') || 'null');
+    if (!session) {
+      window.location.href = './inSesion.html';
+    }
+  </script>
+
   <!-- Header -->
   <header class="flex justify-between items-center px-6 py-4 bg-[#0F111A]">
     <div class="flex items-center">
@@ -20,7 +28,7 @@
     </div>
     <nav class="space-x-6">
       <a href="./index.html" class="hover:text-pink-500">INICIO</a>
-      <a href="/servicios.html" class="text-pink-500 font-semibold underline">SERVICIOS</a>
+      <a href="./servicios.html" class="text-pink-500 font-semibold underline">SERVICIOS</a>
       <a href="./historia.html" class="hover:text-pink-500">CONTACTOS</a>
       <a href="./inSesion.html" class="hover:text-pink-500">INICIAR SESIÓN</a>
     </nav>
@@ -42,8 +50,6 @@
           Inspección moto
         </div>
       </a>
-
-
     </div>
 
     <!-- Lista de beneficios centrada horizontal -->
@@ -92,31 +98,25 @@
         <img src="./images/carro.png" alt="Carro" class="-mt-28 w-full rounded-md relative z-0" />
       </div>
     </div>
+
   </main>
 
   <!-- Footer -->
-<!-- Footer -->
-<footer class="bg-[#0F111A] border-t border-gray-700 mt-6 py-6 px-6 text-sm">
-  <div class="flex flex-col md:flex-row justify-between gap-8">
-
-    <!-- Columna izquierda: ícono + texto -->
-    <div class="flex items-start gap-4 md:w-1/2 px-4">
-      <img src="./icons/mail.png" alt="Correo" class="w-7 h-7 mt-1" />
-      <div>
-        <p class="mb-1">Contacto: info@tuservicio.com | Tel: +123 456 789</p>
-        <p>Dirección: Calle Falsa 123, Ciudad, País</p>
+  <footer class="bg-[#0F111A] border-t border-gray-700 mt-6 py-6 px-6 text-sm">
+    <div class="flex flex-col md:flex-row justify-between gap-8">
+      <div class="flex items-start gap-4 md:w-1/2 px-4">
+        <img src="./icons/mail.png" alt="Correo" class="w-7 h-7 mt-1" />
+        <div>
+          <p class="mb-1">Contacto: info@tuservicio.com | Tel: +123 456 789</p>
+          <p>Dirección: Calle Falsa 123, Ciudad, País</p>
+        </div>
+      </div>
+      <div class="flex justify-center md:justify-center items-center gap-16 md:w-1/2 px-4">
+        <a href="https://www.instagram.com/"><img src="./icons/instagram.png" alt="Instagram" class="w-8 h-8" /></a>
+        <a href="https://www.youtube.com/"><img src="./icons/youtube.png" alt="YouTube" class="w-8 h-8" /></a>
+        <a href="https://www.facebook.com/"><img src="./icons/faceboock.png" alt="Facebook" class="w-8 h-8" /></a>
       </div>
     </div>
-
-    <!-- Columna derecha: íconos grandes, centrados, bien distribuidos -->
-    <div class="flex justify-center md:justify-center items-center gap-16 md:w-1/2 px-4">
-      <a href="https://www.instagram.com/"><img src="./icons/instagram.png" alt="Instagram" class="w-8 h-8" /></a>
-      <a href="https://www.youtube.com/"><img src="./icons/youtube.png" alt="YouTube" class="w-8 h-8" /></a>
-      <a href="https://www.facebook.com/"><img src="./icons/faceboock.png" alt="Facebook" class="w-8 h-8" /></a>
-    </div>
-
-  </div>
-</footer>
-
+  </footer>
 </body>
 </html>
